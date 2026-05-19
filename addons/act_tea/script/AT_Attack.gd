@@ -1,0 +1,1 @@
+class_name AT_Attack extends AT_BaseAction

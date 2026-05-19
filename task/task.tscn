@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://50n52ut7ncl7"]
+
+[ext_resource type="Script" uid="uid://demx4ysv0xj3h" path="res://addons/act_tea/script/ActTeaNode.gd" id="1_a30rr"]
+
+[node name="Task" type="Node" unique_id=309335105]
+
+[node name="ActTeaNode" type="Node" parent="." unique_id=577620638]
+script = ExtResource("1_a30rr")
+metadata/_custom_type_script = "uid://demx4ysv0xj3h"

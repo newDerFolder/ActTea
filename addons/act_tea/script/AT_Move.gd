@@ -1,1 +1,1 @@
-class_name AT_Move extends Node
+class_name AT_Move extends AT_BaseAction

@@ -5,6 +5,7 @@ enum BaseKind{
 	LIFE,
 	ACTION,
 	EFFECT,
+	GROUP
 }
 
 enum Action{
