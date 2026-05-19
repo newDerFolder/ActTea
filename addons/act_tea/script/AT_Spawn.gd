@@ -1,0 +1,1 @@
+class_name AT_Spawn extends AT_BaseLife
