@@ -1,0 +1,1 @@
+class_name AT_Dead extends AT_BaseLife

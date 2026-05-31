@@ -1,0 +1,1 @@
+class_name AT_Active extends AT_BaseLife

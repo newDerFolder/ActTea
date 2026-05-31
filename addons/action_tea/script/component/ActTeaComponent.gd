@@ -1,0 +1,1 @@
+class_name ActTeaComponent extends Node

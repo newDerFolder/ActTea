@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://50n52ut7ncl7"]
 
-[ext_resource type="Script" uid="uid://demx4ysv0xj3h" path="res://addons/act_tea/script/ActTeaNode.gd" id="1_a30rr"]
+[ext_resource type="Script" uid="uid://xf5jyfl6xg7d" path="res://task/task.gd" id="1_wayh6"]
+[ext_resource type="Script" uid="uid://c3sutar45pr0t" path="res://addons/action_tea/script/component/HealthComponent.gd" id="2_wayh6"]
 
 [node name="Task" type="Node" unique_id=309335105]
+script = ExtResource("1_wayh6")
 
-[node name="ActTeaNode" type="Node" parent="." unique_id=577620638]
-script = ExtResource("1_a30rr")
-metadata/_custom_type_script = "uid://demx4ysv0xj3h"
+[node name="HealthComponent" type="Node" parent="." unique_id=694229874]
+script = ExtResource("2_wayh6")
+metadata/_custom_type_script = "uid://c3sutar45pr0t"
