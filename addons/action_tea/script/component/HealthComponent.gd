@@ -12,7 +12,8 @@ signal on_died()
 
 
 func take_damage(damage_amount:int):
-	on_damaged.emit(on_damaged)
+	hp-=damage_amount
+	on_damaged.emit(damage_amount)
 	die()
 func die():
 	if is_alive:

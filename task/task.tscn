@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://xf5jyfl6xg7d" path="res://task/task.gd" id="1_wayh6"]
 [ext_resource type="Script" uid="uid://c3sutar45pr0t" path="res://addons/action_tea/script/component/HealthComponent.gd" id="2_wayh6"]
+[ext_resource type="Script" uid="uid://c3ixykmrlwinn" path="res://addons/action_tea/script/component/HurtboxComponent.gd" id="3_42cdb"]
+[ext_resource type="Script" uid="uid://bdgn6ycydvtbp" path="res://addons/action_tea/script/component/HitBoxComponent.gd" id="4_fdhuj"]
+[ext_resource type="Texture2D" uid="uid://ga6hg0qafaum" path="res://icon.svg" id="4_l6wpi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42cdb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6wpi"]
 
 [node name="Task" type="Node" unique_id=309335105]
 script = ExtResource("1_wayh6")
@@ -9,3 +16,31 @@ script = ExtResource("1_wayh6")
 [node name="HealthComponent" type="Node" parent="." unique_id=694229874]
 script = ExtResource("2_wayh6")
 metadata/_custom_type_script = "uid://c3sutar45pr0t"
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=1790741492 node_paths=PackedStringArray("health_component")]
+position = Vector2(252, 294)
+script = ExtResource("3_42cdb")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://c3ixykmrlwinn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1841286123]
+shape = SubResource("RectangleShape2D_42cdb")
+
+[node name="Sprite2D" type="Sprite2D" parent="HurtboxComponent" unique_id=689707264]
+scale = Vector2(0.1484375, 0.140625)
+texture = ExtResource("4_l6wpi")
+
+[node name="HitBoxComponent" type="Area2D" parent="." unique_id=1180656725]
+position = Vector2(886, 300)
+script = ExtResource("4_fdhuj")
+metadata/_custom_type_script = "uid://bdgn6ycydvtbp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent" unique_id=74061919]
+shape = SubResource("RectangleShape2D_l6wpi")
+
+[node name="Sprite2D" type="Sprite2D" parent="HitBoxComponent" unique_id=1482921070]
+scale = Vector2(0.1484375, 0.140625)
+texture = ExtResource("4_l6wpi")
+
+[connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
+[connection signal="hit" from="HitBoxComponent" to="." method="_on_hit_box_component_hit"]
