@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ga6hg0qafaum" path="res://icon.svg" id="4_l6wpi"]
 [ext_resource type="Script" uid="uid://icf1stgcgsj3" path="res://addons/action_tea/script/component/EnemyRadarComponent.gd" id="5_5wuve"]
 [ext_resource type="Script" uid="uid://dx5f5s3rvx4eo" path="res://addons/action_tea/script/FSM2/BaseActNode.gd" id="7_5a41c"]
+[ext_resource type="Script" uid="uid://dw72dxkt0a0f8" path="res://addons/action_tea/script/FSM2/StateGroupNode.gd" id="8_e0wf4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42cdb"]
 
@@ -80,12 +81,17 @@ metadata/_custom_type_script = "uid://c3ixykmrlwinn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/HurtboxComponent" unique_id=502616607]
 shape = SubResource("RectangleShape2D_e0wf4")
 
-[node name="BaseActNode" type="Node" parent="." unique_id=253953086]
+[node name="StateGroupNode" type="Node" parent="." unique_id=22616513]
+script = ExtResource("8_e0wf4")
+metadata/_custom_type_script = "uid://dw72dxkt0a0f8"
+
+[node name="move" type="Node" parent="StateGroupNode" unique_id=253953086]
 script = ExtResource("7_5a41c")
 metadata/_custom_type_script = "uid://dx5f5s3rvx4eo"
 
-[node name="BaseActNode2" type="Node" parent="." unique_id=2082679923]
+[node name="shot" type="Node" parent="StateGroupNode" unique_id=2082679923 node_paths=PackedStringArray("next_state_nodes")]
 script = ExtResource("7_5a41c")
+next_state_nodes = [null]
 metadata/_custom_type_script = "uid://dx5f5s3rvx4eo"
 
 [connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
