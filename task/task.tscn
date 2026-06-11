@@ -41,7 +41,7 @@ texture = ExtResource("4_l6wpi")
 [node name="EnemyRadarComponent" type="Area2D" parent="HurtboxComponent" unique_id=2090417197]
 collision_mask = 2
 script = ExtResource("5_5wuve")
-scan_interval = 0.0
+scan_interval = 0.1
 metadata/_custom_type_script = "uid://icf1stgcgsj3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent/EnemyRadarComponent" unique_id=701522785]

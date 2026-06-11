@@ -11,22 +11,24 @@ var single_scan_timer:=Timer.new()
 
 signal enemy_detected(area:HurtboxComponent)
 
-
-func _ready() -> void:
-	add_child(scan_interval_timer)
-	add_child(single_scan_timer)
-	scan_interval_timer.timeout.connect(_on_scan_interval_timer_timeout)
-	scan_interval_timer.one_shot=true
-	scan_interval_timer.start(scan_interval)
-	single_scan_timer.one_shot=true
-	single_scan_timer.timeout.connect(_on_single_scan_timer_timeout)
-	area_entered.connect(_on_area_entered)
-
 func _on_area_entered(area:Area2D):
 	if not area is HurtboxComponent:
 		return
 	else:
 		enemy_detected.emit(area)
+func _ready() -> void:
+	add_child(scan_interval_timer)
+	add_child(single_scan_timer)
+	
+	scan_interval_timer.timeout.connect(_on_scan_interval_timer_timeout)
+	scan_interval_timer.one_shot=true
+	single_scan_timer.timeout.connect(_on_single_scan_timer_timeout)
+	scan_interval_timer.start(scan_interval)
+	single_scan_timer.one_shot=true
+	
+	area_entered.connect(_on_area_entered)
+
+
 
 func _physics_process(delta: float) -> void:
 	if not enable:
@@ -34,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		return
 	else:
 		monitoring=true
-	if single_scan_timer.time_left<=0:
+	if single_scan_timer.time_left<=0 and scan_interval>=0.0:
 		return
 	rotation_degrees+=scan_rotation_speed*delta
 
