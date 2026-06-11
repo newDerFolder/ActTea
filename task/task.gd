@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	$HitBoxComponent.position.x-=100*delta
+	$CharacterBody2D.position.x-=100*delta
 
 
 func _on_hit_box_component_hit(hurtbox: HurtboxComponent) -> void:
@@ -16,3 +16,7 @@ func _on_hit_box_component_hit(hurtbox: HurtboxComponent) -> void:
 
 func _on_health_component_on_damaged(damage_amount: int) -> void:
 	print("被打了")
+
+
+func _on_enemy_radar_component_enemy_detected(area: HurtboxComponent) -> void:
+	print("扫描到敌人了",area.global_position)
