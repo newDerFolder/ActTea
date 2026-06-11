@@ -3,6 +3,11 @@ extends Node
 
 
 func _ready() -> void:
+	print_tree()
+	if get_parent() is Button:
+		print("true")
+	else:
+		print("false")
 	pass
 
 

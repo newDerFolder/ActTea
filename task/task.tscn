@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bdgn6ycydvtbp" path="res://addons/action_tea/script/component/HitBoxComponent.gd" id="4_fdhuj"]
 [ext_resource type="Texture2D" uid="uid://ga6hg0qafaum" path="res://icon.svg" id="4_l6wpi"]
 [ext_resource type="Script" uid="uid://icf1stgcgsj3" path="res://addons/action_tea/script/component/EnemyRadarComponent.gd" id="5_5wuve"]
+[ext_resource type="Script" uid="uid://dx5f5s3rvx4eo" path="res://addons/action_tea/script/FSM2/BaseActNode.gd" id="7_5a41c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42cdb"]
 
@@ -78,6 +79,14 @@ metadata/_custom_type_script = "uid://c3ixykmrlwinn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/HurtboxComponent" unique_id=502616607]
 shape = SubResource("RectangleShape2D_e0wf4")
+
+[node name="BaseActNode" type="Node" parent="." unique_id=253953086]
+script = ExtResource("7_5a41c")
+metadata/_custom_type_script = "uid://dx5f5s3rvx4eo"
+
+[node name="BaseActNode2" type="Node" parent="." unique_id=2082679923]
+script = ExtResource("7_5a41c")
+metadata/_custom_type_script = "uid://dx5f5s3rvx4eo"
 
 [connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
 [connection signal="enemy_detected" from="HurtboxComponent/EnemyRadarComponent" to="." method="_on_enemy_radar_component_enemy_detected"]
