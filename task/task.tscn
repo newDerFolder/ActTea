@@ -55,6 +55,23 @@ position = Vector2(227.5, -9.536743e-06)
 scale = Vector2(3.5078125, 0.10937515)
 texture = ExtResource("4_l6wpi")
 
+[node name="StateGroupNode" type="Node" parent="HurtboxComponent" unique_id=22616513]
+script = ExtResource("8_e0wf4")
+metadata/_custom_type_script = "uid://dw72dxkt0a0f8"
+
+[node name="awaitt" type="Node" parent="HurtboxComponent/StateGroupNode" unique_id=253953086 node_paths=PackedStringArray("next_state_nodes")]
+script = ExtResource("7_5a41c")
+state_name = "await"
+active = true
+next_state_nodes = [NodePath("../move")]
+metadata/_custom_type_script = "uid://dx5f5s3rvx4eo"
+
+[node name="move" type="Node" parent="HurtboxComponent/StateGroupNode" unique_id=2082679923 node_paths=PackedStringArray("next_state_nodes")]
+script = ExtResource("7_5a41c")
+state_name = "move"
+next_state_nodes = [null]
+metadata/_custom_type_script = "uid://dx5f5s3rvx4eo"
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=717118289]
 position = Vector2(1072, 298)
 
@@ -80,19 +97,6 @@ metadata/_custom_type_script = "uid://c3ixykmrlwinn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/HurtboxComponent" unique_id=502616607]
 shape = SubResource("RectangleShape2D_e0wf4")
-
-[node name="StateGroupNode" type="Node" parent="." unique_id=22616513]
-script = ExtResource("8_e0wf4")
-metadata/_custom_type_script = "uid://dw72dxkt0a0f8"
-
-[node name="move" type="Node" parent="StateGroupNode" unique_id=253953086]
-script = ExtResource("7_5a41c")
-metadata/_custom_type_script = "uid://dx5f5s3rvx4eo"
-
-[node name="shot" type="Node" parent="StateGroupNode" unique_id=2082679923 node_paths=PackedStringArray("next_state_nodes")]
-script = ExtResource("7_5a41c")
-next_state_nodes = [null]
-metadata/_custom_type_script = "uid://dx5f5s3rvx4eo"
 
 [connection signal="on_damaged" from="HealthComponent" to="." method="_on_health_component_on_damaged"]
 [connection signal="enemy_detected" from="HurtboxComponent/EnemyRadarComponent" to="." method="_on_enemy_radar_component_enemy_detected"]
