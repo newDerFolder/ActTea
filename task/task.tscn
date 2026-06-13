@@ -59,17 +59,15 @@ texture = ExtResource("4_l6wpi")
 script = ExtResource("8_e0wf4")
 metadata/_custom_type_script = "uid://dw72dxkt0a0f8"
 
-[node name="awaitt" type="Node" parent="HurtboxComponent/StateGroupNode" unique_id=253953086 node_paths=PackedStringArray("next_state_nodes")]
+[node name="awaitt" type="Node" parent="HurtboxComponent/StateGroupNode" unique_id=253953086]
 script = ExtResource("7_5a41c")
 state_name = "await"
 active = true
-next_state_nodes = [NodePath("../move")]
 metadata/_custom_type_script = "uid://dx5f5s3rvx4eo"
 
-[node name="move" type="Node" parent="HurtboxComponent/StateGroupNode" unique_id=2082679923 node_paths=PackedStringArray("next_state_nodes")]
+[node name="move" type="Node" parent="HurtboxComponent/StateGroupNode" unique_id=2082679923]
 script = ExtResource("7_5a41c")
 state_name = "move"
-next_state_nodes = [null]
 metadata/_custom_type_script = "uid://dx5f5s3rvx4eo"
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=717118289]

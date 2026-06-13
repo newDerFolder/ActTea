@@ -1,0 +1,1 @@
+class_name BaseGameCharacter2D extends CharacterBody2D
