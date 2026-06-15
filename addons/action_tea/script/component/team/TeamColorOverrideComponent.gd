@@ -1,11 +1,8 @@
 class_name TeamColorOverrideComponent extends Node
 
 
-var character:BaseGameCharacter2D
-var team:TeamMemberComponent.Team
 
-
-func apply_team_color():
+func apply_team_color(character:BaseGameCharacter2D,team:TeamMemberComponent.Team):
 	character.modulate=get_team_color(team)
 
 func get_team_color(team:TeamMemberComponent.Team)->Color:
