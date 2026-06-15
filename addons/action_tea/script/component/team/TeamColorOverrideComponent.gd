@@ -6,7 +6,7 @@ var team:TeamMemberComponent.Team
 
 
 func apply_team_color():
-	character.modulate
+	character.modulate=get_team_color(team)
 
 func get_team_color(team:TeamMemberComponent.Team)->Color:
 	match team:
