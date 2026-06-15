@@ -13,6 +13,10 @@ func _ready() -> void:
 	if not get_parent() is BaseGameCharacter2D:
 		push_error("TeamMemberComponent的parent不是BaseGameCharacter2D")
 		return
+	apply_team()
+
+
+func  apply_team():
 	for i in get_children():
 		if i is TeamColorOverrideComponent:
 			i.character=get_parent()
