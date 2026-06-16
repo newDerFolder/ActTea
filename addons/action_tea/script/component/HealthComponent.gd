@@ -1,4 +1,4 @@
-class_name HealthComponent extends ActTeaComponent
+class_name HealthComponent extends Node2D
 
 @export var max_hp:int=100
 @export var hp:int=100:
