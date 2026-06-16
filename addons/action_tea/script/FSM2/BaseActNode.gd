@@ -11,10 +11,12 @@ signal state_exited(state: BaseStateNode)
 func _physics_process(delta: float) -> void:
 	if active:
 		state_updata(delta)
+		state_update(delta)
 
 func state_updata(delta: float):
 	pass
-
+func state_update(delta: float):
+	pass
 func enter() -> void:
 	active = true
 	state_entered.emit(self)

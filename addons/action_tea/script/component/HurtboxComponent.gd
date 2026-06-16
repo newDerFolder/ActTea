@@ -7,6 +7,9 @@ func _ready() -> void:
 	pass
 
 
+func take_damage(damage):
+	health_component.take_damage(damage)
+
 func _on_area_entered(area: Area2D):
 	if not area is HitBoxComponent:
 		return
