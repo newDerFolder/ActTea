@@ -3,6 +3,7 @@ class_name HealthComponent extends Node2D
 @export var max_hp:int=100
 @export var hp:int=100:
 	set(value):
+		hp=value
 		on_health_changed.emit(value,max_hp)
 @export var is_alive:bool=true
 
@@ -11,10 +12,14 @@ signal on_damaged(damage_amount:int)
 signal on_died()
 
 
+func _ready() -> void:
+	hp=max_hp
+
 func take_damage(damage_amount:int):
 	hp-=damage_amount
 	on_damaged.emit(damage_amount)
-	die()
+	if hp<=0:
+		die()
 func die():
 	if is_alive:
 		is_alive=false
