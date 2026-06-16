@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://icf1stgcgsj3" path="res://addons/action_tea/script/component/EnemyRadarComponent.gd" id="5_5wuve"]
 [ext_resource type="Script" uid="uid://dx5f5s3rvx4eo" path="res://addons/action_tea/script/FSM2/BaseActNode.gd" id="7_5a41c"]
 [ext_resource type="Script" uid="uid://dw72dxkt0a0f8" path="res://addons/action_tea/script/FSM2/StateGroupNode.gd" id="8_e0wf4"]
+[ext_resource type="Script" uid="uid://coqmh7p00ieed" path="res://addons/action_tea/script/component/BaseGameCharacter2D.gd" id="8_itir3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42cdb"]
 
@@ -70,8 +71,11 @@ script = ExtResource("7_5a41c")
 state_name = "move"
 metadata/_custom_type_script = "uid://dx5f5s3rvx4eo"
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=717118289]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=586922016 node_paths=PackedStringArray("collision_layer_array")]
 position = Vector2(1072, 298)
+script = ExtResource("8_itir3")
+collision_layer_array = [NodePath("."), null]
+metadata/_custom_type_script = "uid://coqmh7p00ieed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1052716729]
 shape = SubResource("RectangleShape2D_5wuve")

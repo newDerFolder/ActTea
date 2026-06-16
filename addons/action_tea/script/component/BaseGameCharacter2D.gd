@@ -1,6 +1,12 @@
 class_name BaseGameCharacter2D extends CharacterBody2D
 
 
+
+@export var speed:int=200
+
+@export var collision_layer_array:Array[CollisionObject2D]=[]
+
+
 @export_group("team")
 @export var team:TeamMemberComponent.Team
 

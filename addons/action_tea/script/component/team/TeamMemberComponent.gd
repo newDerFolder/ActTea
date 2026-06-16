@@ -19,3 +19,5 @@ func apply_team():
 	for i in get_children():
 		if i is TeamColorOverrideComponent:
 			i.apply_team_color(character,character.team)
+		elif i is TeamCollisionOverrideComponent:
+			i.apply_team_collision(character,character.team)
