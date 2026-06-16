@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func set_team(team:TeamMemberComponent.Team):
-	team=team
+	self.team=team
 	for i in get_children():
 		if i is TeamMemberComponent:
 			i.character=self
