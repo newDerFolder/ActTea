@@ -14,6 +14,7 @@ signal on_died()
 
 func _ready() -> void:
 	hp=max_hp
+	on_health_changed.emit(hp,max_hp)
 
 func take_damage(damage_amount:int):
 	hp-=damage_amount

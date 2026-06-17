@@ -8,6 +8,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42cdb"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6wpi"]
+
 [node name="Task" type="Node" unique_id=309335105]
 script = ExtResource("1_wayh6")
 
@@ -37,3 +39,6 @@ metadata/_custom_type_script = "uid://dk5q83iefh7pk"
 [node name="BaseGameCharacter2D" type="CharacterBody2D" parent="Node2D" unique_id=151827176]
 script = ExtResource("5_l6wpi")
 metadata/_custom_type_script = "uid://coqmh7p00ieed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/BaseGameCharacter2D" unique_id=1582054387]
+shape = SubResource("RectangleShape2D_l6wpi")
