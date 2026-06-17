@@ -1,6 +1,5 @@
 class_name BaseStateNode extends Node
 
-@export var state_name:String="base state node"
 @export var active: bool = false
 var character:BaseGameCharacter2D
 

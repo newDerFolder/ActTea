@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c3sutar45pr0t" path="res://addons/action_tea/script/component/health/HealthComponent.gd" id="2_wayh6"]
 [ext_resource type="Script" uid="uid://c3ixykmrlwinn" path="res://addons/action_tea/script/component/health/HurtboxComponent.gd" id="3_42cdb"]
 [ext_resource type="Script" uid="uid://dk5q83iefh7pk" path="res://addons/action_tea/script/component/health/HealthBarComponent.gd" id="4_fdhuj"]
+[ext_resource type="Script" uid="uid://coqmh7p00ieed" path="res://addons/action_tea/script/component/BaseGameCharacter2D.gd" id="5_l6wpi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42cdb"]
 
@@ -30,3 +31,9 @@ offset_bottom = 27.0
 script = ExtResource("4_fdhuj")
 health_component = NodePath("..")
 metadata/_custom_type_script = "uid://dk5q83iefh7pk"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1841255699]
+
+[node name="BaseGameCharacter2D" type="CharacterBody2D" parent="Node2D" unique_id=151827176]
+script = ExtResource("5_l6wpi")
+metadata/_custom_type_script = "uid://coqmh7p00ieed"

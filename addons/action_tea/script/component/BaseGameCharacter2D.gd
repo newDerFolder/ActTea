@@ -13,7 +13,10 @@ class_name BaseGameCharacter2D extends CharacterBody2D
 func _ready() -> void:
 	if team!=null:
 		set_team(team)
-
+func _physics_process(delta: float) -> void:
+	pass
+func _process(delta: float) -> void:
+	pass
 
 func set_team(team:TeamMemberComponent.Team):
 	self.team=team
