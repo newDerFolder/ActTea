@@ -13,14 +13,20 @@ class_name BaseGameCharacter2D extends CharacterBody2D
 func _ready() -> void:
 	if team!=null:
 		set_team(team)
+	use_act_component()
 func _physics_process(delta: float) -> void:
 	pass
 func _process(delta: float) -> void:
 	pass
 
-func set_team(team:TeamMemberComponent.Team):
-	self.team=team
+func use_act_component():
 	for i in get_children():
 		if i is TeamMemberComponent:
 			i.character=self
 			i.apply_team()
+		elif i is AttributeOverrideComponent:
+			i.apply_attribute()
+
+func set_team(team:TeamMemberComponent.Team):
+	self.team=team
+	use_act_component()

@@ -1,38 +1,14 @@
 [gd_scene format=3 uid="uid://50n52ut7ncl7"]
 
 [ext_resource type="Script" uid="uid://xf5jyfl6xg7d" path="res://task/task.gd" id="1_wayh6"]
-[ext_resource type="Script" uid="uid://c3sutar45pr0t" path="res://addons/action_tea/script/component/health/HealthComponent.gd" id="2_wayh6"]
-[ext_resource type="Script" uid="uid://c3ixykmrlwinn" path="res://addons/action_tea/script/component/health/HurtboxComponent.gd" id="3_42cdb"]
-[ext_resource type="Script" uid="uid://dk5q83iefh7pk" path="res://addons/action_tea/script/component/health/HealthBarComponent.gd" id="4_fdhuj"]
+[ext_resource type="Script" uid="uid://calmi3o43pix0" path="res://addons/action_tea/script/component/attribute/AttributeOverrideComponent.gd" id="3_42cdb"]
+[ext_resource type="Resource" uid="uid://cdpw4njro08t6" path="res://task/table.tres" id="4_fdhuj"]
 [ext_resource type="Script" uid="uid://coqmh7p00ieed" path="res://addons/action_tea/script/component/BaseGameCharacter2D.gd" id="5_l6wpi"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_42cdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6wpi"]
 
 [node name="Task" type="Node" unique_id=309335105]
 script = ExtResource("1_wayh6")
-
-[node name="HealthComponent" type="Node2D" parent="." unique_id=1022297281]
-script = ExtResource("2_wayh6")
-max_hp = 218
-hp = 298
-metadata/_custom_type_script = "uid://c3sutar45pr0t"
-
-[node name="HurtboxComponent" type="Area2D" parent="HealthComponent" unique_id=1995816121 node_paths=PackedStringArray("health_component")]
-script = ExtResource("3_42cdb")
-health_component = NodePath("..")
-metadata/_custom_type_script = "uid://c3ixykmrlwinn"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthComponent/HurtboxComponent" unique_id=1498587123]
-shape = SubResource("RectangleShape2D_42cdb")
-
-[node name="HealthBarComponent" type="ProgressBar" parent="HealthComponent" unique_id=1529060070 node_paths=PackedStringArray("health_component")]
-offset_right = 597.0
-offset_bottom = 27.0
-script = ExtResource("4_fdhuj")
-health_component = NodePath("..")
-metadata/_custom_type_script = "uid://dk5q83iefh7pk"
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1841255699]
 
@@ -42,3 +18,11 @@ metadata/_custom_type_script = "uid://coqmh7p00ieed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/BaseGameCharacter2D" unique_id=1582054387]
 shape = SubResource("RectangleShape2D_l6wpi")
+
+[node name="AttributeOverrideComponent" type="Node" parent="Node2D/BaseGameCharacter2D" unique_id=55312023 node_paths=PackedStringArray("override_attribute_arr")]
+script = ExtResource("3_42cdb")
+attribute_table = ExtResource("4_fdhuj")
+override_attribute_arr = {
+"speed": NodePath("..")
+}
+metadata/_custom_type_script = "uid://calmi3o43pix0"

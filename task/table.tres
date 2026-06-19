@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ActTeaAttributeTableResource" format=3 uid="uid://cdpw4njro08t6"]
+
+[ext_resource type="Script" uid="uid://ckhhfmbrkeyej" path="res://addons/action_tea/script/component/attribute/ActTea_attribute_table.gd" id="1_07a44"]
+
+[resource]
+script = ExtResource("1_07a44")
+attribute_table = Dictionary[String, Variant]({
+"": null,
+"a": null,
+"aa": null,
+"speed": 114514
+})
+metadata/_custom_type_script = "uid://ckhhfmbrkeyej"
