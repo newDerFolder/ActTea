@@ -11,8 +11,8 @@ func apply_attribute():
 
 	for key in override_attribute_arr:
 		var node = override_attribute_arr[key]
-		if not attribute_table.attribute_table.has(key):
+		if not attribute_table.get_attribute_value_by_string(key):
 			push_error("访问的ActTeaAttributeTableResource不存在此属性")
 			return
 		if node != null and key in node:
-			node.set(key, attribute_table.attribute_table.get(key))
+			node.set(key, attribute_table.get_attribute_value_by_string(key))
