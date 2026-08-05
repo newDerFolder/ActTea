@@ -1,4 +1,4 @@
-class_name ActGameCharacterData extends ActBaseData
+class_name ActRoleData extends ActBaseData
 
 @export var max_hp:float=100
 @export var cur_hp:float=100
@@ -6,3 +6,4 @@ class_name ActGameCharacterData extends ActBaseData
 @export var def:float=5
 @export var level:int=1
 @export var exp:int=0
+@export var speed:float=200
