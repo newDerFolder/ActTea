@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ActTeaAttributeTableResource" format=3 uid="uid://cdpw4njro08t6"]
 
-[ext_resource type="Script" uid="uid://ckhhfmbrkeyej" path="res://addons/action_tea/script/component/attribute/ActTea_attribute_table.gd" id="1_07a44"]
+[ext_resource type="Script" uid="uid://ckhhfmbrkeyej" path="res://addons/action_tea/script/component/old/attribute/ActTea_attribute_table.gd" id="1_07a44"]
 
 [resource]
 script = ExtResource("1_07a44")

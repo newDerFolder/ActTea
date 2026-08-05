@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://50n52ut7ncl7"]
 
 [ext_resource type="Script" uid="uid://xf5jyfl6xg7d" path="res://task/task.gd" id="1_wayh6"]
-[ext_resource type="Script" uid="uid://calmi3o43pix0" path="res://addons/action_tea/script/component/attribute/AttributeOverrideComponent.gd" id="3_42cdb"]
+[ext_resource type="Script" uid="uid://calmi3o43pix0" path="res://addons/action_tea/script/component/old/attribute/AttributeOverrideComponent.gd" id="3_42cdb"]
 [ext_resource type="Resource" uid="uid://cdpw4njro08t6" path="res://task/table.tres" id="4_fdhuj"]
-[ext_resource type="Script" uid="uid://coqmh7p00ieed" path="res://addons/action_tea/script/component/BaseGameCharacter2D.gd" id="5_l6wpi"]
+[ext_resource type="Script" uid="uid://icf1stgcgsj3" path="res://addons/action_tea/script/component/seek/RadarComponent.gd" id="5_5wuve"]
+[ext_resource type="Script" uid="uid://coqmh7p00ieed" path="res://addons/action_tea/script/component/old/BaseGameCharacter2D.gd" id="5_l6wpi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6wpi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwfti"]
 
 [node name="Task" type="Node" unique_id=309335105]
 script = ExtResource("1_wayh6")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1841255699]
+[node name="Node2D" type="Node2D" parent="." unique_id=1841255699 groups=["enemy", "player"]]
 
 [node name="BaseGameCharacter2D" type="CharacterBody2D" parent="Node2D" unique_id=151827176]
 script = ExtResource("5_l6wpi")
@@ -25,4 +28,10 @@ attribute_table = ExtResource("4_fdhuj")
 override_attribute_arr = {
 "speed": NodePath("..")
 }
-metadata/_custom_type_script = "uid://calmi3o43pix0"
+
+[node name="RadarComponent" type="Area2D" parent="Node2D/BaseGameCharacter2D" unique_id=860898175]
+script = ExtResource("5_5wuve")
+metadata/_custom_type_script = "uid://icf1stgcgsj3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/BaseGameCharacter2D/RadarComponent" unique_id=522212120]
+shape = SubResource("RectangleShape2D_nwfti")
