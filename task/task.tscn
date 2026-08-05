@@ -5,10 +5,19 @@
 [ext_resource type="Resource" uid="uid://cdpw4njro08t6" path="res://task/table.tres" id="4_fdhuj"]
 [ext_resource type="Script" uid="uid://icf1stgcgsj3" path="res://addons/action_tea/script/component/seek/RadarComponent.gd" id="5_5wuve"]
 [ext_resource type="Script" uid="uid://coqmh7p00ieed" path="res://addons/action_tea/script/component/old/BaseGameCharacter2D.gd" id="5_l6wpi"]
+[ext_resource type="Script" uid="uid://q0a066l8777f" path="res://addons/action_tea/script/component/character/ActRole2D.gd" id="6_5a41c"]
+[ext_resource type="Script" uid="uid://bsyp2aeemtnq0" path="res://addons/action_tea/script/resource/ActGameCharacterData.gd" id="7_e0wf4"]
+[ext_resource type="Script" uid="uid://c3sutar45pr0t" path="res://addons/action_tea/script/component/health/HealthComponent.gd" id="8_e0wf4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6wpi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwfti"]
+
+[sub_resource type="Resource" id="Resource_nwfti"]
+script = ExtResource("7_e0wf4")
+metadata/_custom_type_script = "uid://bsyp2aeemtnq0"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a41c"]
 
 [node name="Task" type="Node" unique_id=309335105]
 script = ExtResource("1_wayh6")
@@ -35,3 +44,15 @@ metadata/_custom_type_script = "uid://icf1stgcgsj3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/BaseGameCharacter2D/RadarComponent" unique_id=522212120]
 shape = SubResource("RectangleShape2D_nwfti")
+
+[node name="ActRole2D" type="CharacterBody2D" parent="Node2D" unique_id=1504063373]
+script = ExtResource("6_5a41c")
+data = SubResource("Resource_nwfti")
+metadata/_custom_type_script = "uid://q0a066l8777f"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/ActRole2D" unique_id=766115707]
+shape = SubResource("RectangleShape2D_5a41c")
+
+[node name="HealthComponent" type="Node2D" parent="Node2D/ActRole2D" unique_id=1183295530]
+script = ExtResource("8_e0wf4")
+metadata/_custom_type_script = "uid://c3sutar45pr0t"
