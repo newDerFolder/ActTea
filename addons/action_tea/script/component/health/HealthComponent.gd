@@ -1,14 +1,5 @@
 class_name HealthComponent extends Node2D
 
-#@export var max_hp:int=100:
-	#set(value):
-		#max_hp=value
-		#on_health_changed.emit(hp,max_hp)
-#@export var hp:int=100:
-	#set(value):
-		#hp=value
-		#on_health_changed.emit(hp,max_hp)
-#@export var is_alive:bool=true
 
 @export var role:ActRole2D
 var data:ActRoleData
