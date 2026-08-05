@@ -1,8 +1,13 @@
 class_name HitBoxComponent extends Area2D
 
-#@export var damage: float = 10
+
 @export var data:=ActHitData.new()
 
+enum Mode{
+	Default,
+	Group
+}
+@export var mode:Mode
 
 signal hit(hurtbox: HurtboxComponent)
 
@@ -12,7 +17,11 @@ func _ready() -> void:
 
 func _on_area_entered(area:Area2D):
 	if area is HurtboxComponent:
-		for i in get_groups():
-			if area.is_in_group(i):
-				
-				area.take_damage(data)
+		if mode==Mode.Default:
+			area.take_damage(data)
+			return
+		elif mode==Mode.Group:
+			for i in get_groups():
+				if area.is_in_group(i):
+					area.take_damage(data)
+					return
