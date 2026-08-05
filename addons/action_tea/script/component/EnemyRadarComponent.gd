@@ -1,3 +1,4 @@
+@icon("res://addons/action_tea/asset/icon/Radar.png")
 class_name RadarComponent extends Area2D
 
 @export var enable:bool=true
