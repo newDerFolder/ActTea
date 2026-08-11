@@ -1,5 +1,6 @@
-@icon("res://addons/action_tea/asset/icon/Radar.png")
-class_name RadarComponent extends Area2D
+class_name OldRadarComponent extends Area2D
+
+## 老式雷达控件,不推荐使用
 
 @export var enable:bool=true
 @export var scan_interval: float=1

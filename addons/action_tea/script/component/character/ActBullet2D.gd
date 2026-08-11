@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 func set_damage(value:float):
-	damage=value
+	data.atk=value
 
 func _on_hit(hurtbox: HurtboxComponent):
 	pass

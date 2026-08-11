@@ -6,5 +6,5 @@ class_name ActRole2D extends CharacterBody2D
 
 func _ready() -> void:
 	if data==null:
-		push_error(name,"角色未挂载data:ActRoleData")
+		push_error(name,"(ActRoleData)角色未挂载data")
 		return
