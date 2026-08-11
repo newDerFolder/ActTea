@@ -1,5 +1,6 @@
 class_name ActRole2D extends CharacterBody2D
 
+## ActTea中的2D角色组件
 @export var data:ActRoleData
 
 

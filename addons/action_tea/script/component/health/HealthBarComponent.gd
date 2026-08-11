@@ -8,7 +8,7 @@ func _ready() -> void:
 		push_error("HealthBarComponent没有绑定HealthComponent")
 		return
 	else:
-		health_component.on_health_changed.connect(_on_health_component_health_changed)
+		health_component.health_changed.connect(_on_health_component_health_changed)
 		max_value=health_component.max_hp
 	value=health_component.hp
 

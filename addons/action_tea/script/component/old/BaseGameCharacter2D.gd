@@ -1,6 +1,6 @@
 class_name BaseGameCharacter2D extends CharacterBody2D
 
-
+## 已弃用
 
 @export var speed:int=200
 
