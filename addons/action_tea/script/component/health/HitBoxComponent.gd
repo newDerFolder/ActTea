@@ -9,6 +9,8 @@ enum Mode{
 }
 @export var mode:Mode
 
+@export var hit_group:Array[StringName]
+
 signal hit(hurtbox: HurtboxComponent)
 
 
@@ -19,9 +21,12 @@ func _on_area_entered(area:Area2D):
 	if area is HurtboxComponent:
 		if mode==Mode.Default:
 			area.take_damage(data)
+			hit.emit(area)
 			return
 		elif mode==Mode.Group:
-			for i in get_groups():
+			for i in hit_group:
 				if area.is_in_group(i):
 					area.take_damage(data)
+					hit.emit(area)
 					return
+			push_warning("HitBox hit a Hurtbox that doesn't belong to any target group")
