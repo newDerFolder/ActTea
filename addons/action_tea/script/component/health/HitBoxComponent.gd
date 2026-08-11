@@ -7,7 +7,7 @@ enum Mode{
 	Default,
 	Group
 }
-@export var mode:Mode
+@export var mode:Mode=Mode.Group
 
 @export var hit_group:Array[StringName]
 
@@ -28,5 +28,5 @@ func _on_area_entered(area:Area2D):
 				if area.is_in_group(i):
 					area.take_damage(data)
 					hit.emit(area)
-					return
+					break
 			push_warning("HitBox hit a Hurtbox that doesn't belong to any target group")

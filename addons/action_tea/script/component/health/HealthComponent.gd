@@ -12,10 +12,6 @@ signal died()
 
 
 func _ready() -> void:
-	if role==null:
-		push_error(name,"(HealthComponent),role is null")
-		return
-	
 	if not get_parent() is ActRole2D:
 		push_error(name,"(HealthComponent),parent not is ActRole2D")
 		return

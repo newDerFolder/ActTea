@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://xf5jyfl6xg7d" path="res://task/task.gd" id="1_wayh6"]
 [ext_resource type="Script" uid="uid://bsyp2aeemtnq0" path="res://addons/action_tea/script/resource/ActGameCharacterData.gd" id="3_42cdb"]
+[ext_resource type="Script" uid="uid://c3sutar45pr0t" path="res://addons/action_tea/script/component/health/HealthComponent.gd" id="4_5wuve"]
+[ext_resource type="Script" uid="uid://capptpueh04ff" path="res://addons/action_tea/script/component/seek/radar/RadarV1.gd" id="4_fdhuj"]
+[ext_resource type="Script" uid="uid://c3ixykmrlwinn" path="res://addons/action_tea/script/component/health/HurtboxComponent.gd" id="5_5a41c"]
 [ext_resource type="Script" uid="uid://q0a066l8777f" path="res://addons/action_tea/script/component/character/ActRole2D.gd" id="6_5a41c"]
 
 [sub_resource type="Resource" id="Resource_wayh6"]
@@ -9,6 +12,10 @@ script = ExtResource("3_42cdb")
 metadata/_custom_type_script = "uid://bsyp2aeemtnq0"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwfti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wuve"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nwfti"]
 
 [node name="Task" type="Node2D" unique_id=1952157934]
 script = ExtResource("1_wayh6")
@@ -20,3 +27,23 @@ metadata/_custom_type_script = "uid://q0a066l8777f"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActRole2D" unique_id=1405209430]
 shape = SubResource("RectangleShape2D_nwfti")
+
+[node name="HealthComponent" type="Node2D" parent="ActRole2D" unique_id=287244901]
+script = ExtResource("4_5wuve")
+metadata/_custom_type_script = "uid://c3sutar45pr0t"
+
+[node name="HurtboxComponent" type="Area2D" parent="ActRole2D/HealthComponent" unique_id=1098982347 node_paths=PackedStringArray("health_component") groups=["player"]]
+script = ExtResource("5_5a41c")
+health_component = NodePath("..")
+metadata/_custom_type_script = "uid://c3ixykmrlwinn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActRole2D/HealthComponent/HurtboxComponent" unique_id=642548308]
+shape = SubResource("RectangleShape2D_5wuve")
+
+[node name="RadarV1" type="Area2D" parent="." unique_id=461227756]
+script = ExtResource("4_fdhuj")
+scan_groups = Array[StringName]([&"enemy"])
+metadata/_custom_type_script = "uid://capptpueh04ff"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RadarV1" unique_id=1933581930]
+shape = SubResource("CircleShape2D_nwfti")
