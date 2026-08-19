@@ -29,4 +29,4 @@ func _on_area_entered(area:Area2D):
 					area.take_damage(data)
 					hit.emit(area)
 					break
-			push_warning("HitBox hit a Hurtbox that doesn't belong to any target group")
+			#push_warning("HitBox hit a Hurtbox that doesn't belong to any target group")
