@@ -25,6 +25,7 @@ func take_damage(hit_data:ActHitData):
 	if role==null:
 		push_error(name,"(HealthComponent),role is null")
 		return
+	data=role.data
 	var damage=DamageCalculator.get_damage_by_hit_and_role(hit_data,role.data)
 	data.cur_hp-=damage
 	damaged.emit(damage)
