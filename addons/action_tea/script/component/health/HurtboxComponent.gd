@@ -3,9 +3,8 @@ class_name HurtboxComponent extends Area2D
 @export var health_component:HealthComponent
 
 func _ready() -> void:
-	#新版本0.3+改为由HitBox主动攻击
-	#area_entered.connect(_on_area_entered)
-	pass
+	if health_component==null:
+		push_error("health_component为null")
 
 
 func take_damage(hit_data):
