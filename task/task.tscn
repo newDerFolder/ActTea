@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://capptpueh04ff" path="res://addons/action_tea/script/component/seek/radar/RadarV1.gd" id="4_fdhuj"]
 [ext_resource type="Script" uid="uid://c3ixykmrlwinn" path="res://addons/action_tea/script/component/health/HurtboxComponent.gd" id="5_5a41c"]
 [ext_resource type="Script" uid="uid://q0a066l8777f" path="res://addons/action_tea/script/component/character/ActRole2D.gd" id="6_5a41c"]
+[ext_resource type="Script" uid="uid://dk5q83iefh7pk" path="res://addons/action_tea/script/component/health/HealthBarComponent.gd" id="6_e0wf4"]
 
 [sub_resource type="Resource" id="Resource_wayh6"]
 script = ExtResource("3_42cdb")
@@ -39,6 +40,13 @@ metadata/_custom_type_script = "uid://c3ixykmrlwinn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActRole2D/HealthComponent/HurtboxComponent" unique_id=642548308]
 shape = SubResource("RectangleShape2D_5wuve")
+
+[node name="HealthBarComponent" type="ProgressBar" parent="ActRole2D" unique_id=147710704 node_paths=PackedStringArray("health_component")]
+offset_right = 4.0
+offset_bottom = 27.0
+script = ExtResource("6_e0wf4")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://dk5q83iefh7pk"
 
 [node name="RadarV1" type="Area2D" parent="." unique_id=461227756]
 script = ExtResource("4_fdhuj")

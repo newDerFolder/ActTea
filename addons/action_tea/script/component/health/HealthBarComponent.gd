@@ -9,8 +9,8 @@ func _ready() -> void:
 		return
 	else:
 		health_component.health_changed.connect(_on_health_component_health_changed)
-		max_value=health_component.max_hp
-	value=health_component.hp
+		max_value=health_component.data.max_hp
+	value=health_component.data.cur_hp
 
 func _on_health_component_health_changed(hp:int,max_hp:int):
 	max_value=max_hp
