@@ -3,6 +3,8 @@ class_name HurtboxComponent extends Area2D
 @export var health_component:HealthComponent
 
 func _ready() -> void:
+	if get_parent() is HealthComponent:
+		health_component=get_parent()
 	if health_component==null:
 		push_error("health_component为null")
 
