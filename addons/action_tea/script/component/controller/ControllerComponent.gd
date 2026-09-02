@@ -1,4 +1,4 @@
-## ActTea中的通用控制器,使用它来让角色可控制吧
+## ActTea中的角色控制器,将其放在ActRole2D下，使用它来让角色可控制吧
 class_name ControllerComponent extends Node
 
 
