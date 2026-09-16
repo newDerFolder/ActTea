@@ -61,8 +61,9 @@ metadata/_custom_type_script = "uid://cw6gpg1bvl1el"
 [node name="Sprite2D" type="Sprite2D" parent="ActRole2D" unique_id=1393963845]
 texture = ExtResource("8_itir3")
 
-[node name="StateMachine" type="Node" parent="ActRole2D" unique_id=816695921]
+[node name="StateMachine" type="Node" parent="ActRole2D" unique_id=816695921 node_paths=PackedStringArray("cur_state")]
 script = ExtResource("10_hctts")
+cur_state = NodePath("run")
 metadata/_custom_type_script = "uid://d0qjvb0qln2rc"
 
 [node name="atk" type="Node" parent="ActRole2D/StateMachine" unique_id=230540968]

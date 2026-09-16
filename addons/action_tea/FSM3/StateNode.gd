@@ -5,8 +5,7 @@ extends Node
 var state_machine: StateMachine
 
 func _ready() -> void:
-	if state_machine == null:
-		push_warning("StateNode 未挂载到 StateMachine 下")
+	pass
 
 func _physics_process(delta: float) -> void:
 	if state_machine and state_machine.cur_state == self:
