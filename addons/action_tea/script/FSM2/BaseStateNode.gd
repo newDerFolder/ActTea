@@ -1,3 +1,4 @@
+## @deprecated
 class_name BaseStateNode extends Node
 
 @export var active: bool = false

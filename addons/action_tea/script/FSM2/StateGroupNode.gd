@@ -1,3 +1,4 @@
+## @deprecated
 class_name StateGroupNode extends Node
 
 @export var character:BaseGameCharacter2D

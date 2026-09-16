@@ -1,10 +1,25 @@
-## ActTea中的状态机节点,配合ActRole2D使用
-class_name StateNode extends Node
+class_name StateNode
+extends Node
 
+var state_machine: StateMachine
+
+func _ready() -> void:
+	if state_machine == null:
+		push_warning("StateNode 未挂载到 StateMachine 下")
 
 func _physics_process(delta: float) -> void:
-	state_update(delta)
+	if state_machine and state_machine.cur_state == self:
+		state_update(delta)
 
-## 重写此方法为该状态添加逻辑
-func state_update(delta:float)->void:
+func transition_to(state: StateNode) -> void:
+	if state_machine:
+		state_machine.transition_to(state)
+
+func state_update(delta: float) -> void:
+	pass
+
+func enter_state() -> void:
+	pass
+
+func exit_state() -> void:
 	pass

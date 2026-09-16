@@ -9,6 +9,9 @@
 [ext_resource type="Script" uid="uid://dk5q83iefh7pk" path="res://addons/action_tea/script/component/health/HealthBarComponent.gd" id="6_e0wf4"]
 [ext_resource type="Script" uid="uid://cw6gpg1bvl1el" path="res://addons/action_tea/script/component/controller/ControllerComponent.gd" id="7_e0wf4"]
 [ext_resource type="Texture2D" uid="uid://ga6hg0qafaum" path="res://icon.svg" id="8_itir3"]
+[ext_resource type="Script" uid="uid://d0qjvb0qln2rc" path="res://addons/action_tea/FSM3/StateMachine.gd" id="10_hctts"]
+[ext_resource type="Script" uid="uid://buhcfsym3tw0w" path="res://addons/action_tea/FSM3/StateGroup.gd" id="11_sh2e1"]
+[ext_resource type="Script" uid="uid://d4g8vr4tgaak7" path="res://addons/action_tea/FSM3/StateNode.gd" id="12_pv85r"]
 
 [sub_resource type="Resource" id="Resource_wayh6"]
 script = ExtResource("3_42cdb")
@@ -57,6 +60,22 @@ metadata/_custom_type_script = "uid://cw6gpg1bvl1el"
 
 [node name="Sprite2D" type="Sprite2D" parent="ActRole2D" unique_id=1393963845]
 texture = ExtResource("8_itir3")
+
+[node name="StateMachine" type="Node" parent="ActRole2D" unique_id=816695921]
+script = ExtResource("10_hctts")
+metadata/_custom_type_script = "uid://d0qjvb0qln2rc"
+
+[node name="atk" type="Node" parent="ActRole2D/StateMachine" unique_id=230540968]
+script = ExtResource("11_sh2e1")
+metadata/_custom_type_script = "uid://buhcfsym3tw0w"
+
+[node name="axe" type="Node" parent="ActRole2D/StateMachine/atk" unique_id=1863761728]
+script = ExtResource("12_pv85r")
+metadata/_custom_type_script = "uid://d4g8vr4tgaak7"
+
+[node name="run" type="Node" parent="ActRole2D/StateMachine" unique_id=339600501]
+script = ExtResource("12_pv85r")
+metadata/_custom_type_script = "uid://d4g8vr4tgaak7"
 
 [node name="RadarV1" type="Area2D" parent="." unique_id=461227756]
 script = ExtResource("4_fdhuj")
