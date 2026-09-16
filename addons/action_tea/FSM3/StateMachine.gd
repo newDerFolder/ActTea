@@ -1,3 +1,4 @@
+@icon("res://addons/action_tea/asset/icon/state_machine.png")
 class_name StateMachine
 extends Node
 

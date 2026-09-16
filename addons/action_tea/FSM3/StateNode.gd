@@ -1,3 +1,4 @@
+@icon("res://addons/action_tea/asset/icon/state_node.png")
 class_name StateNode
 extends Node
 
