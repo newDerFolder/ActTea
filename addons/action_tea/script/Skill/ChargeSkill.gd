@@ -19,6 +19,7 @@ func use_skill() -> void:
 		cur_charges-=1
 		if recharge_on_empty and cur_charges<=0:
 			timer.start(cooldown_time)
+		_execute_skill()
 
 func can_use()->bool:
 	if cur_charges>0:

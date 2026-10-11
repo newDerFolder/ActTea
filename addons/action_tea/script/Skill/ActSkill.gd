@@ -6,8 +6,6 @@ class_name ActSkill extends Node
 var timer:=Timer.new()
 
 
-func _process(delta: float) -> void:
-	print(timer.time_left)
 
 func use_skill() -> void:
 	if not can_use():
