@@ -7,3 +7,9 @@ class_name ActRoleData extends ActBaseData
 @export var level:int=1
 @export var exp:int=0
 @export var speed:float=200
+
+
+func level_up():
+	if exp>=LevelUpCalculator.exp_needed_for_level(level+1):
+		exp-=LevelUpCalculator.exp_needed_for_level(level+1)
+		level+=1
