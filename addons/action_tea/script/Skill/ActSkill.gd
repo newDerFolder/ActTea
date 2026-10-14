@@ -5,6 +5,8 @@ class_name ActSkill extends Node
 
 var timer:=Timer.new()
 
+signal cooldown_finished  # 冷却完成（充能恢复完成）
+
 
 
 func use_skill() -> void:
@@ -23,7 +25,7 @@ func _ready() -> void:
 	timer.timeout.connect(_on_time_timeout)
 
 func _on_time_timeout():
-	pass
+	cooldown_finished.emit()
 
 
 

@@ -7,6 +7,8 @@ class_name ChargeSkill extends ActSkill
 
 var _interval_timer := Timer.new()
 
+signal charge_recovered   # 充能恢复（每恢复一次充能触发）
+
 func _ready() -> void:
 	super._ready()
 	
@@ -58,5 +60,7 @@ func _on_time_timeout() -> void:
 	super._on_time_timeout()
 	if cur_charges < max_charges:
 		cur_charges += 1
+		charge_recovered.emit()
 	if recharge_on_empty:
 		cur_charges = max_charges
+		charge_recovered.emit()
