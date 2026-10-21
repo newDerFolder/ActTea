@@ -9,7 +9,7 @@ enum Mode{
 }
 @export var mode:Mode=Mode.Group
 
-@export var hit_group:Array[StringName]
+@export var hit_group: Array[StringName]
 
 signal hit(hurtbox: HurtboxComponent)
 
